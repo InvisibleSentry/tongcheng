@@ -29,62 +29,6 @@ div:after {
     background: white
 }
 
-/*css-------------header*/
-#header {
-    width: 100%;
-    background: #F5F5F5;
-    border-bottom: 1px solid darkgray;
-}
-
-.div_header {
-    width: 1200px;
-    height: 33px;
-    margin: 0 auto;
-
-    line-height: 33px;
-}
-
-.header_left {
-    width: auto;
-    height: 32px;
-    float: left;
-}
-
-.header_right {
-    width: auto;
-    height: 32px;
-    float: right;
-}
-
-.div_header li {
-    width: auto;
-    height: 32px;
-    padding: 0 12px;
-    float: left;
-    line-height: 32px;
-    position: relative;
-}
-
-.div_header span {
-    float: left;
-    vertical-align: text-bottom;
-    color: #008852;
-    font-size: 17px;
-}
-
-.div_header li:hover {
-    text-decoration: underline;
-}
-
-#changeCity {
-    position: absolute;
-    top: 30px;
-    width: 300px;
-    height: 200px;
-    border: 1px solid black;
-    z-index: 120;
-    display: none;
-}
 
 /*css-------------menu   */
 .div_menu {
@@ -365,7 +309,12 @@ div:after {
 }
 
 /*css------------------recyle*/
-.recycle {
+#recycle {
+    width: 100%;
+    height: 300px;
+    background: #F7F7F7;
+}
+#oldChose {
     width: 100%;
     height: 300px;
     background: #F7F7F7;
@@ -414,6 +363,15 @@ div:after {
 }
 
 /*css-------------repair*/
+#tips-down {
+    border-color:green transparent ;
+    border-style: solid;
+    font-size: 0;
+    border-width: 10px 10px 0px 10px;
+    float: left;
+    left: -10px;
+    top: 33px;
+}
 .repair {
     width: 100%;
     height: 924px;
@@ -423,7 +381,7 @@ div:after {
     width: auto;
     height: 100%;
     margin: 0 53px;
-    background: palegoldenrod;
+    background: whit;
 }
 
 .repair_subnav {
@@ -432,7 +390,7 @@ div:after {
     padding: 20px 0;
 }
 
-.repair_subnav div:nth-child(1), .repair_subnav div:nth-child(2) {
+.repair_subnav :nth-child(1), .repair_subnav :nth-child(2) {
     height: 100%;
     border: 1px solid forestgreen;
     float: left;
@@ -442,11 +400,11 @@ div:after {
     line-height: 32px;
 }
 
-.repair_subnav div:nth-child(1) {
+.repair_subnav :nth-child(1) {
     width: 142px;
 }
 
-.repair_subnav div:nth-child(2) {
+.repair_subnav :nth-child(2) {
     width: 142px;
 }
 
@@ -473,6 +431,7 @@ div:after {
 .repair_main {
     width: 890px;
     height: auto;
+    float: left;
     /*background: royalblue;*/
 }
 
@@ -502,7 +461,7 @@ div:after {
     float: left;
 }
 
-#map {
+#map{
     float: right;
     width: 103px;
     height: 30px;
@@ -528,16 +487,19 @@ div:after {
 .repair_list {
     width: 100%;
     height: auto;
-    background: pink;
+    background:white;
 }
 
 .repair_list li {
     position: relative;
     height: 133px;
     padding: 20px 0;
-    border-bottom: 1px solid #F7F7F7;
+    border-bottom: 1px solid #C1C1C1;
 }
-
+.repair_list .shopName{
+    color: green;
+    font-size: 18px;
+}
 .repair_list li > a {
     margin: 0px 20px 0 0;
     position: absolute;
@@ -546,6 +508,10 @@ div:after {
     width: 90px;
     height: 90px;
     background: midnightblue;
+}
+.repair_list li > a img{
+    width:90px;
+    height:90px;
 }
 
 .repair_list li:last-child {
@@ -625,7 +591,69 @@ li:hover .div_out {
     height: 100%;
     display: inline-block;
 }
-/*末尾栏________________________*/
+#repairRight{
+    width:270px;
+    height:695px;
+    background:yellow;
+    float: right;
+    border: 1px solid #C1C1C1;
+
+}
+#repairRight p{
+    width:100%;
+    height: 42px;
+    background: #F7F7F7;
+    text-align: center;
+    line-height: 42px;
+    font-size: 22px;
+}
+#repairRight li{
+    line-height:25px;
+    width:100%;
+    height:93px;
+    padding: 21px 0px;
+    background: white;
+    border-top: 1px solid #C1C1C1;
+}
+#repairRight div{
+    box-sizing: border-box;
+    width:26px;
+    height:26px;
+    border:3px solid orange;
+    border-radius: 50%;
+    margin: 12px 15px;
+    line-height: 22px;
+    vertical-align: middle;
+    text-align: center;
+    float: left;
+    color: orangered;
+    font-size:16px;
+    font-weight: 600;
+}
+#repairRight li a{
+    width:auto;margin-right:10px ;
+    float: left;
+    text-align: left;
+    font-size: 16px;
+    color: green;
+
+}
+#repairRight li  span{
+    float: left;
+    display: inline-block;
+    text-align: left;
+    width:auto;
+    font-size: 16px;
+
+
+}
+#repairRight li a img{
+    border:1px solid #C1C1C1;
+    width:50px;
+    height: 50px;}
+
+
+/*指南______________________*/
 #lastColumn{
     width:100%;
     height:290px;
@@ -635,61 +663,36 @@ li:hover .div_out {
     width:984px;
     height:100%;
     margin:0 auto;
-    background: yellow;
+    /*background: yellow;*/
+    padding: 20px;}
+
+.div_lastColumn>li{float: left;
+    width: 20%;
+    height:auto;}
+.ico_giuld{float: left;
+    width: 43px;
+    height: 43px;
+    margin-left:28px;
+    font-size: 40px;
+    color: darkgrey;
+
 }
-/*高德地图______________________*/
-#gaodeMap{
-    display: none;
-    position: fixed;
-    z-index: 200;
-    width:100%;
-    height:100%;
-    background: rgba(0,0,0,0.5);
+.guild{
+    color: grey;
+    margin-left:6px;
+    float: left;
 }
-#gaode{
-    width:890px;
-    height: 550px;
-    background: #F7F7F7;
-    margin:0 auto;
-    position: absolute;
-    top:40px;
-    left:0;
-    right:0;
-}
-#gaodeClose{
-    width:25px;
-    height:30px;
-    line-height:30px;
+.guild li
+{   font-size: 14px;
+    width: 110px;
+    height: 26px;
+    line-height: 25px;
     vertical-align: middle;
+    }
+.guild li:first-child{
     font-size: 20px;
-    float: right;
-    cursor: pointer;
-}
-
-.gaodeTop{
-    width:100%;
-    height:30px;
-    /*background:;*/
-}
-.gaodeMin{
-    width:100%;
-    height:455px;
-    background:white;}
-
-
-.gaodeBottom{
-    width:auto;
-    height:auto;
-    margin: 0 auto;
-    /*line-height:60px;*/
-    background: yellow;
-    overflow: hidden;
-    text-align: center;
-}
-.gaodeBottom span{
-    display: inline-block;
-    margin:20px 10px;
-    width:40px;
-    height:40px;
-    border:1px solid black;
-}
+    line-height: 36px;
+    height: 36px;
+    font-weight: 600}
+.hiddens{  visibility: hidden; }
+.visibles{  visibility: visible; }

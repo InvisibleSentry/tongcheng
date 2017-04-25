@@ -1,0 +1,173 @@
+/*css-------------header*/
+#header {
+    width: 100%;
+    background: #F5F5F5;
+    border-bottom: 1px solid darkgray;
+}
+
+.div_header {
+    width: 1200px;
+    height: 33px;
+    margin: 0 auto;
+
+    line-height: 33px;
+}
+
+.header_left {
+    width: auto;
+    height: 32px;
+    float: left;
+}
+
+.header_right {
+    width: auto;
+    height: 32px;
+    float: right;
+}
+
+.div_header li {
+    width: auto;
+    height: 32px;
+    padding: 0 12px;
+    float: left;
+    line-height: 32px;
+    position: relative;
+}
+
+.div_header span {
+    float: left;
+    vertical-align: text-bottom;
+    color: #008852;
+    font-size: 17px;
+}
+
+.div_header li:hover {
+    text-decoration: underline;
+}
+/*高德地图______________________*/
+#changeCityBtn{
+    cursor: pointer;
+    float: left;}
+#changeCity {
+    position: absolute;
+    top: 25px;
+    width: 500px;
+    height: 220px;
+    border: 1px solid darkgray;
+    z-index: 120;
+    background:#F6F6F6;
+    padding: 10px 10px 10px;
+    line-height: 25px;
+    display: none;
+}
+#cityBox{
+    width: 100%;
+    height:auto;
+    padding: 15px 10px 10px;
+    background: white;
+    overflow: hidden}
+#cityBox>span{
+    float: left;
+    width:40px;
+}
+#cityBox>ul{
+    float: left;
+    width:410px;
+    text-align: center;
+    padding-left: 10px;
+
+}
+#hotCity li{
+    width:11%;
+    height:25px;
+    float: left;
+    line-height: 25px;
+    text-align: left;
+    padding: 0;
+}
+#closeBtn{
+    width: 50px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 3px;
+    float: right;
+    line-height:20px;
+    vertical-align: middle;
+    text-align: center;}
+
+#choseCity li{
+    float: left;
+    width:15px;
+    padding: 0;
+    box-sizing: border-box;
+    border-bottom: 1px solid black;
+}
+
+#gaodeMap{
+    display: none;
+    position: fixed;
+    z-index: 200;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.5);
+}
+#gaode{
+    width:890px;
+    height: 570px;
+    background: #F7F7F7;
+    margin:0 auto;
+    position: absolute;
+    top:40px;
+    left:0;
+    right:0;
+}
+#gaodeClose{
+    width:25px;
+    height:30px;
+    line-height:30px;
+    vertical-align: middle;
+    font-size: 20px;
+    float: right;
+    cursor: pointer;
+}
+
+.gaodeTop{
+    width:100%;
+    height:30px;
+    /*background:;*/
+}
+.gaodeMin{
+    width:100%;
+    height:455px;
+    background:white;}
+
+
+.Bottom{
+    width:auto;
+    height:auto;
+    margin: 0 auto;
+    /*line-height:60px;*/
+    /*background: yellow;*/
+    overflow: hidden;
+    text-align: center;
+}
+.Bottom span{
+    display: inline-block;
+    margin:20px 4px;
+    width:40px;
+    height:40px;
+    line-height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    color: darkgray;
+    border:1px solid darkgray;
+}
+ .firstPage , .lastPage{
+    width:60px!important;
+
+}
+{
+}
+.previousPage , .nextPage{
+    width:100px!important;
+}

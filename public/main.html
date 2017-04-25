@@ -10,6 +10,7 @@
 
     </style>
     <script src="javascripts/tongcehngbang.js"></script>
+    <link rel="stylesheet" href="stylesheets/headcss.css">
 
 </head>
 <body>
@@ -19,8 +20,12 @@
             <div id="gaodeClose">X</div>
         </div>
         <div class="gaodeMin"></div>
-        <div class="gaodeBottom">
-            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        <div class="Bottom">
+            <span class="firstPage">首页</span>
+            <span class="previousPage">《前一页</span>
+            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+            <span class="nextPage">后一页》</span>
+            <span class="lastPage">尾页</span>
         </div>
 
     </div>
@@ -29,9 +34,70 @@
 <div id="header">
     <div class="div_header">
         <ul class="header_left">
-            <span>深圳</span>
-            <li>切换城市
-                <div id="changeCity"></div>
+            <span id="cityName">深圳</span>
+            <li ><div id="changeCityBtn">[切换城市]</div>
+                <div id="changeCity">
+                    城市列表
+                    <div id="closeBtn">关闭×</div>
+                    <div id="cityBox">
+                        <span>热门</span>
+                        <ul id="hotCity">
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li>6</li>
+                            <li>7</li>
+                            <li>8</li>
+                            <li>9</li>
+                            <li>10</li>
+                            <li>11</li>
+                            <li>12</li>
+                            <li>13</li>
+                            <li>14</li>
+                            <li>15</li>
+
+                        </ul>
+                        <span>拼音</span>
+
+                        <ul id="choseCity">
+                            <li>A</li>
+                            <li>B</li>
+                            <li>C</li>
+                            <li>D</li>
+                            <li>E</li>
+                            <li>F</li>
+                            <li>G</li>
+                            <li>H</li>
+                            <li>I</li>
+                            <li>J</li>
+                            <li>K</li>
+                            <li>L</li>
+                            <li>M</li>
+                            <li>N</li>
+                            <li>P</li>
+                            <li>O</li>
+                            <li>Q</li>
+                            <li>R</li>
+                            <li>S</li>
+                            <li>T</li>
+                            <li>U</li>
+                            <li>V</li>
+                            <li>W</li>
+                            <li>X</li>
+                            <li>Y</li>
+                            <li>Z</li>
+                        </ul>
+
+                    </div>
+
+
+
+
+
+                </div>
+
             </li>
             <li><a href="">tongshouye</a></li>
         </ul>
@@ -253,8 +319,10 @@
         <li><img src="https://p.ssl.qhimg.com/t01fc1fd0e5522663ba.jpg" alt=""></li>
     </ul>
 </div>
+
+<!--热门是手机回收-->
 <div class="title">热门手机回收</div>
-<div class="recycle">
+<div id="recycle">
     <ul class="div_recycle">
         <li style="background: url('https://p.ssl.qhimg.com/t01a10599c63e402740.png') no-repeat 0 0"><a href="">
             <!--<strong>免费估值</strong><br>-->
@@ -282,8 +350,9 @@
 
     </ul>
 </div>
+<!--二手良品精选-->
 <div class="title">二手良品精选</div>
-<div class="recycle">
+<div id="oldChose">
     <ul class="div_recycle">
         <li><a href=""></a></li>
         <li><a href=""></a></li>
@@ -296,12 +365,17 @@
 <div class="title">到店维修</div>
 <div class="repair">
     <div class="div_repair">
-        <div class="repair_subnav">
-            <div>深圳</div>
-            <div>南山</div>
+
+        <form action="" class="repair_subnav">
+            <select name="city" id="city">
+
+            </select>
+            <select name="county" id="county">
+
+            </select>
             <input type="text" name="adr" placeholder="输入距离您较近的地址以便于查找附近的商家">
             <input type="submit" value="搜索">
-        </div>
+        </form>
         <div class="repair_main">
             <div class="repair_menu">
                 <a href="">默认排序</a>
@@ -315,16 +389,34 @@
                 </div>
             </div>
             <!--维修店铺信息清单---------------------------->
-            <ul class="repair_list">
+            <ul class="repair_list" >
                 <li>
-                    <a href=""><img src="" alt=""></a>
+                    <a href=""><img src="http://p0.qhimg.com/edr/140__140/ss/30_105/t01c823eef70de391b0.png" alt=""></a>
+                    <div>
+                        <h3><a href="" class="shopName  ">深圳联想笔记本售后 </a>店铺等级：i</h3>
+                        <span>主营：笔记本专修，苹果专修，投影机专修，数据恢复，上门维修，电脑包月,苹果专</span><br>
+                        <span>地址：深圳南山区赛格电子市场三楼3B10,3B11,3B22 号</span>
+                    </div>
+                    <div>
+                        <i>￥</i><span>现行赔付</span><br>
+                        <i>√</i><span>同城帮认证</span><br>
+                        <span>人气：10300次浏览</span>
+
+                    </div>
+                    <div class="div_out goshop">
+                        <a href="">进入店铺</a>
+                    </div>
+
+                </li>
+                <li>
+                    <a href=""><img src="http://p2.qhimg.com/edr/140__140/ss/30_105/t01d393b539d5466914.gif" alt=""></a>
                     <div>
                         <h3><a href=""></a>店铺等级：i</h3>
                         <span>主营：笔记本专修，苹果专修，投影机专修，数据恢复，上门维修，电脑包月,苹果专</span><br>
                         <span>地址：深圳南山区赛格电子市场三楼3B10,3B11,3B22 号</span>
                     </div>
                     <div>
-                        <i>￥</i><span>现行赔付</span><br>
+                        <span class="hiddens"><i>￥</i>现行赔付</span><br>
                         <i>√</i><span>同城帮认证</span><br>
                         <span>人气：10300次浏览</span>
 
@@ -342,7 +434,7 @@
                         <span>地址：深圳南山区赛格电子市场三楼3B10,3B11,3B22 号</span>
                     </div>
                     <div>
-                        <i>￥</i><span>现行赔付</span><br>
+                        <span><i>￥</i>现行赔付</span><br>
                         <i>√</i><span>同城帮认证</span><br>
                         <span>人气：10300次浏览</span>
 
@@ -360,7 +452,7 @@
                         <span>地址：深圳南山区赛格电子市场三楼3B10,3B11,3B22 号</span>
                     </div>
                     <div>
-                        <i>￥</i><span>现行赔付</span><br>
+                        <span><i>￥</i>现行赔付</span><br>
                         <i>√</i><span>同城帮认证</span><br>
                         <span>人气：10300次浏览</span>
 
@@ -378,25 +470,7 @@
                         <span>地址：深圳南山区赛格电子市场三楼3B10,3B11,3B22 号</span>
                     </div>
                     <div>
-                        <i>￥</i><span>现行赔付</span><br>
-                        <i>√</i><span>同城帮认证</span><br>
-                        <span>人气：10300次浏览</span>
-
-                    </div>
-                    <div class="div_out goshop">
-                        <a href="">进入店铺</a>
-                    </div>
-
-                </li>
-                <li>
-                    <a href=""><img src="" alt=""></a>
-                    <div>
-                        <h3><a href=""></a>店铺等级：i</h3>
-                        <span>主营：笔记本专修，苹果专修，投影机专修，数据恢复，上门维修，电脑包月,苹果专</span><br>
-                        <span>地址：深圳南山区赛格电子市场三楼3B10,3B11,3B22 号</span>
-                    </div>
-                    <div>
-                        <i>￥</i><span>现行赔付</span><br>
+                        <span><i>￥</i>现行赔付</span><br>
                         <i>√</i><span>同城帮认证</span><br>
                         <span>人气：10300次浏览</span>
 
@@ -407,18 +481,100 @@
 
                 </li>
             </ul>
+            <div class="Bottom">
+                <span class="firstPage">首页</span>
+                <span class="previousPage"> «前一页</span>
+                <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+                <span class="nextPage">后一页» </span>
+                <span class="lastPage">尾页</span>
+            </div>
 
         </div>
+        <div id="repairRight">
+            <p>商家好评榜</p>
+            <ol type="1" start="1">
+                <li><div>1</div><a href=""><img src="http://p6.qhimg.com/edr/140__140/ss/30_105/t01784924c69478f651.jpg" alt=""></a>
+                    <a href="">能帮科技</a><br><span>1121评论</span></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+
     </div>
+
 
 </div>
 </div>
+
+<!--底框样式-->
 <div id="lastColumn">
-    <div class="div_lastColumn">
+    <ul class="div_lastColumn">
+        <li>
+            <span class="iconfont ico_giuld">&#xe666; </span>
+            <ul class="guild">
+                <li>
+                    购物指南
+                    </li>
+                <li>购物流程
+                    </li>
+                <li>用户注册
+                    </li>
+                <li>帮助文档</li>
+        </ul>
+        </li>
+        <li>
+            <span class="iconfont ico_giuld">&#xe62d; </span>
+            <ul class="guild">
+                <li>
+                    购物指南
+                </li>
+                <li>购物流程
+                </li>
+                <li>用户注册
+                </li>
+            </ul>
+        </li>
+        <li>
+            <span class="iconfont ico_giuld">&#xe62a; </span>
+            <ul class="guild">
+                <li>
+                    购物指南
+                </li>
+                <li>
+                    购物指南
+                </li>
+            </ul>
+        </li>
+        <li>
+            <span class="iconfont ico_giuld">&#xe74f; </span>
+            <ul class="guild">
+                <li>
+                    购物指南
+                </li>
+                <li>购物流程
+                </li>
+            </ul>
+        </li>
+        <li>
+            <span class="iconfont ico_giuld">&#xe66b; </span>
+            <ul class="guild">
+                <li>
+                    购物指南
+                </li>
+                <li style="color: blue;">购物流程
+                </li>
+                <li>用户注册
+                </li>
 
-    </div>
+            </ul>
+        </li>
+
+    </ul>
 </div>
-
 
 
 </body>
