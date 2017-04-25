@@ -1,0 +1,792 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>商家店铺</title>
+	
+	<script src="js/jquery-1.11.3.js"></script>
+	<script type="text/javascript">
+		/**展示数据*/
+	var $t = $('.service-list');
+	$.get("http://192.168.0.106:8080/tongcheng/shop-list.json",function(data){
+		$(data.shop_data).each(function(){
+			// console.log(this.main);
+			var $li = $("<li></li>");
+			var $serleft_cont = $("<div class='serleft-cont'></div>");
+			var $a1 = $("<a href='#'></a>");
+			var $img = $("<img class='pic-item' />").attr("src",this.shop_ico).appendTo($a1);
+				
+			$a1.appendTo($serleft_cont);
+			var $a2 = $("<a href='#' class='product-name'></a>").append(this.shop_name).appendTo($serleft_cont);
+			
+			var $pic_cont = $("<div class='pic-cont'></a>").appendTo($serleft_cont);
+			var $price_box = $("<span class='price-box'></span>").append("￥");
+			var $em =$("<em></em>").append(this.comments).appendTo($price_box);
+			$price_box.appendTo($pic_cont);
+
+			var $fwnr_mini =$("<p class='fwnr-mini'></p>");
+			var $b = $("<b></b>").append("服务内容：").appendTo($fwnr_mini);
+			$fwnr_mini.append(this.main);
+			var $link_fwnr_more = $("<a href='link-fwnr-more'></a>").append("展开").appendTo($fwnr_mini);
+			$fwnr_mini.appendTo($pic_cont);
+
+			var $fwnr_more = $("<p class='fwnr-more'></p>")
+			$b.appendTo($fwnr_more);
+			var $link_fwnr_mini = $("<a href='link-fwnr-mini'></a>").append("收起").appendTo($fwnr_more);
+			$fwnr_more.appendTo($pic_cont);
+
+			var $clear = $("<div class='clear'></div>").appendTo($serleft_cont);
+			$serleft_cont.appendTo($li);
+
+
+			var $serright_cont = $("<div class='serright-cont'></div>");
+			var $buy = $("<div class='buy'></div>");
+			var $buy_btn = $("<p class='buy-btn'></p>").append("立即购买").appendTo($buy);
+			$buy.appendTo($serright_cont);
+			$serright_cont.appendTo($li);
+
+
+			$li.appendTo($t);
+			});
+	},"json");
+	</script>
+	<link href="css/shop.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div class="topbar">
+	<!-- 导航内容 -->
+		<div class="topbar-con">
+			<!-- 左边内容 -->
+			<div class="topbar-l-info">
+				<a href="#" class="city">北京</a>
+				<a href="#" class="change-city">[切换城市]</a>
+				<a href="#" class="shouye">同城帮首页</a>
+			</div>
+			<!-- 右边内容 -->
+			<div class="topbar-r-info">
+				<ul class="topbar-nav">
+					<li><a href="#">登陆</a></li>
+					<li><a href="#">注册</a></li>
+					<li><a href="#">我的订单</a></li>
+					<li><span class="dhua">客服电话：4000-399-360</span></li>
+					<li class="khfw"><a href="#">客户服务</a>
+						<ul class="sub">
+							<li><a href="#">帮助中心</a></li>
+							<li><a href="#">二手机咨询</a></li>
+							<li><a href="#">维修付款</a></li>
+						</ul>
+					</li>
+					<li><a href="#" class="last">投诉建议</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<!-- logo 搜索 -->
+	<div id="logo-nav">
+		<div class="ln-con">
+			<a href="#"><img src="images/shop-img/logo.png" /></a>
+			<div class="ln-con-right">
+				<div class="nav">
+					<a href="#" class="cur">全部</a>
+					<a href="#">台式机</a>
+					<a href="#">笔记本</a>
+					<a href="#">手机平板</a>
+					<a href="#">办公设备</a>
+					<a href="#">服务器</a>
+				</div>
+				<form class="top-search" action="#" target="_blank">
+					<div class="search">
+						<input type="text" class="search-input" placeholder="输入您的电脑/手机问题，为您找到最优质的维修商" />
+						<input type="submit" value="搜索" class="search-submit" />
+						<a href="#" class="icon"></a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<!-- 内容区 -->
+	<div id="container">
+		<!-- 商店简介 -->
+		<div class="shop-info">
+			<div class="pic">
+				<img src="images/shop-img/xunfei.jpg" height="110px" width="110px" />
+			</div>
+			<div class="cont">
+				<div class="cont-l">
+					<h1>飞通通讯手机电脑维修中心&nbsp;<span class="renzhen-bg">360认证</span><a href="#"></a></h1>
+					<div class="cert">
+						<span class="icon-danbao"></span><span class="cert-wz">360担保交易</span>
+						<span class="icon-tuikuan"></span><span class="cert-wz">无效退款</span>
+						<span class="icon-peifu"></span><span class="cert-wz">先行赔付</span>
+					</div>
+					<div class="gugao contact">
+						联系人：江志伟&nbsp;&nbsp;电话：<span class="phone">135****999</span><span class="see-phone">查看完整号码></span>
+					</div>
+					<div class="gugao addr">
+						<span>商家地址：北京大兴区高米店日月星辰市场内前厅移动手机店(四号....)</span>
+						<a href="#" class="see-big-map">地图</a>
+					</div>
+				</div>
+				<div class="cont-r">
+					<div class="gugao share">
+						<a href="#"><span class="icon-fx"></span><span class="cert-wz">分享</span></a>
+						<a href="#"><span class="icon-fzsj"></span><span class="cert-wz">发至手机</span></a>
+						<a href="#"><span class="icon-jubao"></span><span class="cert-wz">举报</span></a>
+					</div>
+					<div class="gugao shop-lv">
+						<span>店铺等级：</span>
+					</div>
+					<div class="gugao cjpl">
+						<span>最近成交：</span><strong style="color:red">543</strong>次&nbsp;&nbsp;评价：<strong style="color:black">542</strong>条
+					</div>
+					<div class="gugao yysj"><span>营业时间：09:00-18:00&nbsp;&nbsp;周末正常营业</span></div>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<!-- 店铺公告 -->
+		<div class="shop-notice">
+			<div class="notice-tit">
+				<span class="icon-notice"></span><span class="notice-wz">店铺公告：</span>
+			</div>
+			<div class="notice-list">
+				<span class="nc-item">1.<span style="color:red">固态硬盘会大幅提高速度，正在火热更换中</span></span>
+			</div>
+		</div>
+		<!-- 列表评价区 -->
+		<div class="grid">
+			<div class="grid-left">
+				<ul class="shop-sub-menu">
+					<li class="m-item curr"><a href="#prd-list">商品列表</a></li>
+					<li class="m-item"><a href="#prd-cmt">交易评价</a></li>
+					<li class="m-item"><a href="#bdxq">本店详情</a></li>
+					<li class="m-item"><a href="#server-bz">服务保障</a></li>
+					<li class="shop-search">
+						<div class="search">
+							<input type="text" placeholder="搜索本店服务" class="t" />
+							<input type="button" class="service" />
+						</div>
+					</li>
+				</ul>
+				<!-- s商品列表 -->
+				<div class="service-item" name="prd-list">
+					<div class="bd">
+						<ul id="itemServiceType">
+							<li class="active"><a href="#">全部<span>(4)</span></a></li>
+							<li><a href="#">台式机<span>(4)</span></a></li>
+							<li><a href="#">笔记本<span>(4)</span></a></li>
+							<li><a href="#">数据恢复<span>(4)</span></a></li>
+							<li><a href="#">企业服务<span>(4)</span></a></li>
+							<li><a href="#">其它<span>(4)</span></a></li>
+						</ul>
+						<div class="clear"></div>
+						<ul class="service-list">
+							<!-- <li>
+								<div class="serleft-cont">
+									<div class="pic-item"><a href="#"><img src="images/shop-img/pic-item1.jpg"></a>
+									</div>
+									<a href="#" class="product-name">苹果手机iPhone贴钢化膜</a>
+									<div class="pic-cont">
+										<span class="price-box">
+											<span class="pic-price">￥<em>30.00</em>
+										</span>
+										<p class="fwnr-mini"><b>服务内容：</b>钢化膜活动<a href="#" class="link-fwnr-more">展开</a></p>
+										<p class="fwnr-more">
+											<b>服务内容：</b>
+											<a href="#" class="link-fwnr-mini">收起</a>
+										</p>
+									</div>
+									<div class="clear"></div>
+								</div>
+								<div class="serright-cont">
+									<div class="buy">
+										<p class="buy-btn">立即购买</p>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="serleft-cont">
+									<div class="pic-item"><a href="#"><img src="images/shop-img/pic-item1.jpg"></a>
+									</div>
+									<a href="#" class="product-name">苹果手机iPhone贴钢化膜</a>
+									<div class="pic-cont">
+										<span class="price-box">
+											<span class="pic-price">￥<em>30.00</em>
+										</span>
+										<p class="fwnr-mini"><b>服务内容：</b>钢化膜活动<a href="#" class="link-fwnr-more">展开</a></p>
+										<p class="fwnr-more">
+											<b>服务内容：</b>
+											<a href="#" class="link-fwnr-mini">收起</a>
+										</p>
+									</div>
+									<div class="clear"></div>
+								</div>
+								<div class="serright-cont">
+									<div class="buy">
+										<p class="buy-btn">立即购买</p>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="serleft-cont">
+									<div class="pic-item"><a href="#"><img src="images/shop-img/pic-item1.jpg"></a>
+									</div>
+									<a href="#" class="product-name">苹果手机iPhone贴钢化膜</a>
+									<div class="pic-cont">
+										<span class="price-box">
+											<span class="pic-price">￥<em>30.00</em>
+										</span>
+										<p class="fwnr-mini"><b>服务内容：</b>钢化膜活动<a href="#" class="link-fwnr-more">展开</a></p>
+										<p class="fwnr-more">
+											<b>服务内容：</b>
+											<a href="#" class="link-fwnr-mini">收起</a>
+										</p>
+									</div>
+									<div class="clear"></div>
+								</div>
+								<div class="serright-cont">
+									<div class="buy">
+										<p class="buy-btn">立即购买</p>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="serleft-cont">
+									<div class="pic-item"><a href="#"><img src="images/shop-img/pic-item1.jpg"></a>
+									</div>
+									<a href="#" class="product-name">苹果手机iPhone贴钢化膜</a>
+									<div class="pic-cont">
+										<span class="price-box">
+											<span class="pic-price">￥<em>30.00</em>
+										</span>
+										<p class="fwnr-mini"><b>服务内容：</b>钢化膜活动<a href="#" class="link-fwnr-more">展开</a></p>
+										<p class="fwnr-more">
+											<b>服务内容：</b>
+											<a href="#" class="link-fwnr-mini">收起</a>
+										</p>
+									</div>
+									<div class="clear"></div>
+								</div>
+								<div class="serright-cont">
+									<div class="buy">
+										<p class="buy-btn">立即购买</p>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="serleft-cont">
+									<div class="pic-item"><a href="#"><img src="images/shop-img/pic-item1.jpg"></a>
+									</div>
+									<a href="#" class="product-name">苹果手机iPhone贴钢化膜</a>
+									<div class="pic-cont">
+										<span class="price-box">
+											<span class="pic-price">￥<em>30.00</em>
+										</span>
+										<p class="fwnr-mini"><b>服务内容：</b>钢化膜活动<a href="#" class="link-fwnr-more">展开</a></p>
+										<p class="fwnr-more">
+											<b>服务内容：</b>
+											<a href="#" class="link-fwnr-mini">收起</a>
+										</p>
+									</div>
+									<div class="clear"></div>
+								</div>
+								<div class="serright-cont">
+									<div class="buy">
+										<p class="buy-btn">立即购买</p>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="serleft-cont">
+									<div class="pic-item"><a href="#"><img src="images/shop-img/pic-item1.jpg"></a>
+									</div>
+									<a href="#" class="product-name">苹果手机iPhone贴钢化膜</a>
+									<div class="pic-cont">
+										<span class="price-box">
+											<span class="pic-price">￥<em>30.00</em>
+										</span>
+										<p class="fwnr-mini"><b>服务内容：</b>钢化膜活动<a href="#" class="link-fwnr-more">展开</a></p>
+										<p class="fwnr-more">
+											<b>服务内容：</b>
+											<a href="#" class="link-fwnr-mini">收起</a>
+										</p>
+									</div>
+									<div class="clear"></div>
+								</div>
+								<div class="serright-cont">
+									<div class="buy">
+										<p class="buy-btn">立即购买</p>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="serleft-cont">
+									<div class="pic-item"><a href="#"><img src="images/shop-img/pic-item1.jpg"></a>
+									</div>
+									<a href="#" class="product-name">苹果手机iPhone贴钢化膜</a>
+									<div class="pic-cont">
+										<span class="price-box">
+											<span class="pic-price">￥<em>30.00</em>
+										</span>
+										<p class="fwnr-mini"><b>服务内容：</b>钢化膜活动<a href="#" class="link-fwnr-more">展开</a></p>
+										<p class="fwnr-more">
+											<b>服务内容：</b>
+											<a href="#" class="link-fwnr-mini">收起</a>
+										</p>
+									</div>
+									<div class="clear"></div>
+								</div>
+								<div class="serright-cont">
+									<div class="buy">
+										<p class="buy-btn">立即购买</p>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="serleft-cont">
+									<div class="pic-item"><a href="#"><img src="images/shop-img/pic-item1.jpg"></a>
+									</div>
+									<a href="#" class="product-name">苹果手机iPhone贴钢化膜</a>
+									<div class="pic-cont">
+										<span class="price-box">
+											<span class="pic-price">￥<em>30.00</em>
+										</span>
+										<p class="fwnr-mini"><b>服务内容：</b>钢化膜活动<a href="#" class="link-fwnr-more">展开</a></p>
+										<p class="fwnr-more">
+											<b>服务内容：</b>
+											<a href="#" class="link-fwnr-mini">收起</a>
+										</p>
+									</div>
+									<div class="clear"></div>
+								</div>
+								<div class="serright-cont">
+									<div class="buy">
+										<p class="buy-btn">立即购买</p>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="serleft-cont">
+									<div class="pic-item"><a href="#"><img src="images/shop-img/pic-item1.jpg"></a>
+									</div>
+									<a href="#" class="product-name">苹果手机iPhone贴钢化膜</a>
+									<div class="pic-cont">
+										<span class="price-box">
+											<span class="pic-price">￥<em>30.00</em>
+										</span>
+										<p class="fwnr-mini"><b>服务内容：</b>钢化膜活动<a href="#" class="link-fwnr-more">展开</a></p>
+										<p class="fwnr-more">
+											<b>服务内容：</b>
+											<a href="#" class="link-fwnr-mini">收起</a>
+										</p>
+									</div>
+									<div class="clear"></div>
+								</div>
+								<div class="serright-cont">
+									<div class="buy">
+										<p class="buy-btn">立即购买</p>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="serleft-cont">
+									<div class="pic-item"><a href="#"><img src="images/shop-img/pic-item1.jpg"></a>
+									</div>
+									<a href="#" class="product-name">苹果手机iPhone贴钢化膜</a>
+									<div class="pic-cont">
+										<span class="price-box">
+											<span class="pic-price">￥<em>30.00</em>
+										</span>
+										<p class="fwnr-mini"><b>服务内容：</b>钢化膜活动<a href="#" class="link-fwnr-more">展开</a></p>
+										<p class="fwnr-more">
+											<b>服务内容：</b>
+											<a href="#" class="link-fwnr-mini">收起</a>
+										</p>
+									</div>
+									<div class="clear"></div>
+								</div>
+								<div class="serright-cont">
+									<div class="buy">
+										<p class="buy-btn">立即购买</p>
+									</div>
+								</div>
+							</li> -->
+						</ul>
+						<div id="itemServicePager" class="pagination">
+							<p class="pages">
+								<span>1</span>
+								<span>2</span>
+								<span>3</span>
+								<span class="next">下一页>></span>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+				<!-- 交易评价 -->
+				<div class="u-comments" name="prd-cmt">
+					<h2 class="hd">用户评价</h2>
+					<div class="bd">
+						<ul class="comments">
+							<li class="figure-h">
+								<div class="pic">
+									<img src="images/shop-img/comments.jpg" height="32px" width="32px" />
+									<span class="Uid">360U374454624</span>
+								</div>
+								<div class="cont">
+									<div class="hd-unit">
+										<div class="rating">
+											<span></span>
+											<span class="orange">5分</span>
+											<span class="no">订单号：151110132******4624</span>
+										</div>
+									</div>
+									<p class="comment-cont">
+										师傅人品不错，讲解的很耐心!
+									</p>
+									<p class="comment-baseinfo">
+										<span class="data">2015-11-10 13:16:32</span>
+										<span>|</span>
+										<span>上门维修电脑</span>
+									</p>
+								</div>
+							</li>
+							<li class="figure-h">
+								<div class="pic">
+									<img src="images/shop-img/comments.jpg" height="32px" width="32px" />
+									<span class="Uid">360U374454624</span>
+								</div>
+								<div class="cont">
+									<div class="hd-unit">
+										<div class="rating">
+											<span></span>
+											<span class="orange">5分</span>
+											<span class="no">订单号：151110132******4624</span>
+										</div>
+									</div>
+									<p class="comment-cont">
+										师傅人品不错，讲解的很耐心!
+									</p>
+									<p class="comment-baseinfo">
+										<span class="data">2015-11-10 13:16:32</span>
+										<span>|</span>
+										<span>上门维修电脑</span>
+									</p>
+								</div>
+							</li>
+							<li class="figure-h">
+								<div class="pic">
+									<img src="images/shop-img/comments.jpg" height="32px" width="32px" />
+									<span class="Uid">360U374454624</span>
+								</div>
+								<div class="cont">
+									<div class="hd-unit">
+										<div class="rating">
+											<span></span>
+											<span class="orange">5分</span>
+											<span class="no">订单号：151110132******4624</span>
+										</div>
+									</div>
+									<p class="comment-cont">
+										师傅人品不错，讲解的很耐心!
+									</p>
+									<p class="comment-baseinfo">
+										<span class="data">2015-11-10 13:16:32</span>
+										<span>|</span>
+										<span>上门维修电脑</span>
+									</p>
+								</div>
+							</li>
+							<li class="figure-h">
+								<div class="pic">
+									<img src="images/shop-img/comments.jpg" height="32px" width="32px" />
+									<span class="Uid">360U374454624</span>
+								</div>
+								<div class="cont">
+									<div class="hd-unit">
+										<div class="rating">
+											<span></span>
+											<span class="orange">5分</span>
+											<span class="no">订单号：151110132******4624</span>
+										</div>
+									</div>
+									<p class="comment-cont">
+										师傅人品不错，讲解的很耐心!
+									</p>
+									<p class="comment-baseinfo">
+										<span class="data">2015-11-10 13:16:32</span>
+										<span>|</span>
+										<span>上门维修电脑</span>
+									</p>
+								</div>
+							</li>
+							<li class="figure-h">
+								<div class="pic">
+									<img src="images/shop-img/comments.jpg" height="32px" width="32px" />
+									<span class="Uid">360U374454624</span>
+								</div>
+								<div class="cont">
+									<div class="hd-unit">
+										<div class="rating">
+											<span></span>
+											<span class="orange">5分</span>
+											<span class="no">订单号：151110132******4624</span>
+										</div>
+									</div>
+									<p class="comment-cont">
+										师傅人品不错，讲解的很耐心!
+									</p>
+									<p class="comment-baseinfo">
+										<span class="data">2015-11-10 13:16:32</span>
+										<span>|</span>
+										<span>上门维修电脑</span>
+									</p>
+								</div>
+							</li>
+							<li class="figure-h">
+								<div class="pic">
+									<img src="images/shop-img/comments.jpg" height="32px" width="32px" />
+									<span class="Uid">360U374454624</span>
+								</div>
+								<div class="cont">
+									<div class="hd-unit">
+										<div class="rating">
+											<span></span>
+											<span class="orange">5分</span>
+											<span class="no">订单号：151110132******4624</span>
+										</div>
+									</div>
+									<p class="comment-cont">
+										师傅人品不错，讲解的很耐心!
+									</p>
+									<p class="comment-baseinfo">
+										<span class="data">2015-11-10 13:16:32</span>
+										<span>|</span>
+										<span>上门维修电脑</span>
+									</p>
+								</div>
+							</li>
+							<li class="figure-h">
+								<div class="pic">
+									<img src="images/shop-img/comments.jpg" height="32px" width="32px" />
+									<span class="Uid">360U374454624</span>
+								</div>
+								<div class="cont">
+									<div class="hd-unit">
+										<div class="rating">
+											<span></span>
+											<span class="orange">5分</span>
+											<span class="no">订单号：151110132******4624</span>
+										</div>
+									</div>
+									<p class="comment-cont">
+										师傅人品不错，讲解的很耐心!
+									</p>
+									<p class="comment-baseinfo">
+										<span class="data">2015-11-10 13:16:32</span>
+										<span>|</span>
+										<span>上门维修电脑</span>
+									</p>
+								</div>
+							</li>
+							<li class="figure-h">
+								<div class="pic">
+									<img src="images/shop-img/comments.jpg" height="32px" width="32px" />
+									<span class="Uid">360U374454624</span>
+								</div>
+								<div class="cont">
+									<div class="hd-unit">
+										<div class="rating">
+											<span></span>
+											<span class="orange">5分</span>
+											<span class="no">订单号：151110132******4624</span>
+										</div>
+									</div>
+									<p class="comment-cont">
+										师傅人品不错，讲解的很耐心!
+									</p>
+									<p class="comment-baseinfo">
+										<span class="data">2015-11-10 13:16:32</span>
+										<span>|</span>
+										<span>上门维修电脑</span>
+									</p>
+								</div>
+							</li>
+							<li class="figure-h">
+								<div class="pic">
+									<img src="images/shop-img/comments.jpg" height="32px" width="32px" />
+									<span class="Uid">360U374454624</span>
+								</div>
+								<div class="cont">
+									<div class="hd-unit">
+										<div class="rating">
+											<span></span>
+											<span class="orange">5分</span>
+											<span class="no">订单号：151110132******4624</span>
+										</div>
+									</div>
+									<p class="comment-cont">
+										师傅人品不错，讲解的很耐心!
+									</p>
+									<p class="comment-baseinfo">
+										<span class="data">2015-11-10 13:16:32</span>
+										<span>|</span>
+										<span>上门维修电脑</span>
+									</p>
+								</div>
+							</li>
+							<li class="figure-h">
+								<div class="pic">
+									<img src="images/shop-img/comments.jpg" height="32px" width="32px" />
+									<span class="Uid">360U374454624</span>
+								</div>
+								<div class="cont">
+									<div class="hd-unit">
+										<div class="rating">
+											<span></span>
+											<span class="orange">5分</span>
+											<span class="no">订单号：151110132******4624</span>
+										</div>
+									</div>
+									<p class="comment-cont">
+										师傅人品不错，讲解的很耐心!
+									</p>
+									<p class="comment-baseinfo">
+										<span class="data">2015-11-10 13:16:32</span>
+										<span>|</span>
+										<span>上门维修电脑</span>
+									</p>
+								</div>
+							</li>
+						</ul>
+						<div id="itemServicePager" class="pagination">
+							<p class="pages">
+								<span>1</span>
+								<span>2</span>
+								<span>3</span>
+								<span class="next">下一页>></span>
+							</p>
+						</div>
+					</div>
+				</div>
+				<!-- 本店详情 -->
+				<div class="shop-section" name="bdxq">
+					<h2 class="hd">店铺详情</h2>
+					<table class="shop-intro">
+						<tr>
+							<th>主营</th>
+							<td>电脑维修，电脑周边配件，系统维护，网络安装，打印机加粉</td>
+						</tr>
+						<tr>
+							<th>服务区域</th>
+							<td><span>玉桥</span><span>乔庄</span><span>运河大街</span><span>梨园</span><span>东关</span><span>中仓</span></td>
+						</tr>
+						<tr>
+							<th>地址</th>
+							<td>北京通州区果园环岛葛布店北里10号楼底商(<a href="#">查看地图</a>)</td>
+						</tr>
+						<tr>
+							<th class="shop-intro-last">公告</th>
+							<td class="shop-intro-last">1.<span style="color:red;">固态硬盘会大幅提高速度，正在火热更换中！</span></td>
+						</tr>
+					</table>
+				</div>
+				<!-- 服务保障 -->
+				<div class="fwbz" name="server-bz">
+					<h2 class="hd">服务保障</h2>
+					<div><img src="images/shop-img/fwbz.jpg"></div>
+				</div>
+			</div>
+			
+			<div class="grid-right">
+				<div class="sidebar">
+					<div class="weidian">
+						<div class="weidian-tit">欢迎关注我的微店</div>
+						<div class="weidian-img">
+							<img src="images/shop-img/showqrcode.gif">
+						</div>
+					</div>
+					<div class="map">
+						<div id="map-cont"></div>
+						<a href="#">查看大图</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 底部 -->
+	<div class="clear"></div>
+	<div id="footer">
+		<ul>
+			<li>	
+				<i class="footer_bg"></i>
+				<div class="footer_txt">
+					<a href="#"><span>购物指南</span></a>
+					<a href="#">购物流程</a>
+					<a href="#">用户注册</a>
+					<a href="#">帮助文档</a>
+				</div>
+			</li>
+			<li>	
+				<i class="footer_bg footer_bg_2"></i>
+				<div class="footer_txt">
+					<a href="#">支付方式</a>
+					<a href="#">在线支付</a>
+					<a href="#">当面付款</a>
+				</div>
+			</li>
+			<li>	
+				<i class="footer_bg footer_bg_3"></i>
+				<div class="footer_txt">
+					<a href="#">售后服务</a>
+					<a href="#">投诉建</a>
+				</div>
+			</li>
+			<li>	
+				<i class="footer_bg footer_bg_4"></i>
+				<div class="footer_txt">
+					<a href="#">特色保障</a>
+					<a href="#">360担保支付</a>
+				</div>
+			</li>
+			<li>
+				<i class="footer_bg footer_bg_5"></i>
+				<div class="footer_txt">
+					<a href="#">商家合作</a>
+					<a href="#">加盟同城帮</a>
+				</div>
+			</li>
+		</ul>
+		<div class="footer_fun">
+			<p>客服电话：4000-399-360 投诉建议 网站地图</p>
+			<p>Copyright © 2005-2016  360.CN  All Rights Reserved  360安全中心</p>
+			<p>京ICP备08010314号-19    京公网安备110000000006号</p>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=2af485a2c25d20f1ee8b7008cb3ec3d1"></script> 
+<script type="text/javascript">
+	var map= new AMap.Map('map-cont',{
+        zoom: 15,
+        center: [116.39,39.9]
+    });
+    AMap.plugin(['AMap.ToolBar','AMap.Scale'],function(){
+    var toolBar = new AMap.ToolBar();
+    var scale = new AMap.Scale();
+    map.addControl(toolBar);
+    map.addControl(scale);
+})
+    var marker = new AMap.Marker({
+        position: [116.480983, 39.989628],
+        map:map
+    });
+     var infowindow = new AMap.InfoWindow({
+     content: '<h3>高德地图</h1><div>高德是中国领先的数字地图内容、导航和位置服务解决方案提供商。</div>',
+     offset: new AMap.Pixel(0, -30),
+     size:new AMap.Size(230,0)
+})
+     infowindow.open(map,new AMap.LngLat(116.480983, 39.989628));
+</script>
+</html>
